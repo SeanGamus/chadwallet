@@ -36,3 +36,8 @@ export const features = [
     id: 6,
   },
 ];
+
+export const android_url =
+  "https://play.google.com/store/apps/details?id=xyz.chadwallet.www&pli=1";
+export const apple_url =
+  "https://apps.apple.com/us/app/chadwallet/id6757367474";

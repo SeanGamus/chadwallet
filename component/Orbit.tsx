@@ -1,9 +1,15 @@
 import React from "react";
 import Image from "next/image";
 
-const Orbit = () => {
+interface OrbitProps {
+  className?: string;
+}
+
+const Orbit: React.FC<OrbitProps> = ({ className }) => {
   return (
-    <div className="min-h-96 w-full flex items-center justify-center absolute -z-10">
+    <div
+      className={`min-h-96 w-full flex items-center justify-center absolute -z-10 ${className}`}
+    >
       <div className="border-dotted border-2 size-160 rounded-full border-white/30"></div>
 
       <Image

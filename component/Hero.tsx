@@ -5,16 +5,25 @@ import ActionButtons from "./ActionButtons";
 
 const Hero = () => {
   return (
-    <section id="hero" className="text-center pt-30 relative items-center flex flex-col">
-      <p className="text-9xl font-bold">ChadWallet</p>
+    <section
+      id="hero"
+      className="text-center pt-30 relative items-center flex flex-col"
+    >
+      <p className="text-9xl font-bold max-sm:hidden">ChadWallet</p>
       <p className="text-4xl font-semibold">where traders become legends.</p>
-      <p className="text-2xl font-semibold">
+      <p className="text-2xl font-semibold max-md:text-lg">
         From memecoins to viral tokens, trade any crypto in seconds.
       </p>
 
-      <ActionButtons/>
+      <ActionButtons />
 
-      <Image className="animate-float -z-1 relative bottom-[50]" src="/astronaut.png" alt="astronaut" height={300} width={300} />
+      <Image
+        className="animate-float -z-1 relative bottom-[50]"
+        src="/astronaut.png"
+        alt="astronaut"
+        height={300}
+        width={300}
+      />
     </section>
   );
 };

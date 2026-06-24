@@ -1,10 +1,13 @@
-import React from "react";
+"use client";
+import { android_url, apple_url } from "@/constant/constants";
+import { usePrivy } from "@privy-io/react-auth";
 import Image from "next/image";
 import Link from "next/link";
 const HeaderButton = () => {
-  const android_url =
-    "https://play.google.com/store/apps/details?id=xyz.chadwallet.www&pli=1";
-  const apple_url = "https://apps.apple.com/us/app/chadwallet/id6757367474";
+  const { ready, login } = usePrivy();
+
+  if (!ready) return <div>...Loading</div>;
+
   return (
     <div className="flex max-md:hidden flex-row justify-between gap-2 h-auto">
       <Link
@@ -39,7 +42,10 @@ const HeaderButton = () => {
           <p className="text-white relative text-[15px]">Google Play</p>
         </div>
       </Link>
-      <button className="text-white font-bold bg-gray-950 rounded-xl px-6 py-2 cursor-pointer hover:bg-gray-800 hover:text-gray-100 transition">
+      <button
+        onClick={login}
+        className="text-white font-bold bg-gray-950 rounded-xl px-6 py-2 cursor-pointer hover:bg-gray-800 hover:text-gray-100 transition"
+      >
         Login
       </button>
     </div>

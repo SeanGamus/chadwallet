@@ -5,8 +5,8 @@ import { features } from "@/constant/constants";
 const Features = () => {
   const text = "";
   return (
-    <section id="features" className="px-24 flex flex-col gap-6">
-      <div id="text">
+    <section id="features" className="px-24 flex flex-col gap-6 max-sm:px-4 pt-20">
+      <div id="text" className="max-sm:hidden">
         <p className="text-6xl font-bold">never miss out again</p>
         <p className="text-3xl font-bold">the only social-first trading app</p>
       </div>
