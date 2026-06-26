@@ -1,12 +1,18 @@
 "use client";
 import { android_url, apple_url } from "@/constant/constants";
 import { usePrivy } from "@privy-io/react-auth";
+import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 const HeaderButton = () => {
-  const { ready, login } = usePrivy();
+  const { ready, authenticated, login } = usePrivy();
 
   if (!ready) return <div>...Loading</div>;
+
+  const handleLogin = () => {
+    if (!authenticated) login();
+    else redirect("/trading");
+  };
 
   return (
     <div className="flex max-md:hidden flex-row justify-between gap-2 h-auto">
@@ -43,7 +49,7 @@ const HeaderButton = () => {
         </div>
       </Link>
       <button
-        onClick={login}
+        onClick={handleLogin}
         className="text-white font-bold bg-gray-950 rounded-xl px-6 py-2 cursor-pointer hover:bg-gray-800 hover:text-gray-100 transition"
       >
         Login

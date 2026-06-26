@@ -1,7 +1,6 @@
 import Features from "@/component/Features";
 import HeaderComponent from "@/component/HeaderComponent";
 import Hero from "@/component/Hero";
-import Orbit from "@/component/Orbit";
 import Testimonial from "@/component/Testimonial";
 import Web from "@/component/Web";
 
@@ -17,7 +16,6 @@ export default function Home() {
         <Features />
         <Testimonial />
       </main>
-
       <footer className="z-5">
         <div className=" flex bg-linear-to-b from-green-400 to-gray-900 pt-40 pb-10 pl-20 w-full">
           <p className="text-amber-100">Created by Aditya Singh</p>
