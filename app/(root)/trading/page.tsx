@@ -1,5 +1,5 @@
 "use client";
-import { supabase } from "@/lib/supabaseClient";
+import { addUser } from "@/actions/addUser";
 import { usePrivy } from "@privy-io/react-auth";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
@@ -10,22 +10,21 @@ const Trading = () => {
     return redirect("/login");
   }
 
-  // useEffect(() => {
-  //   if (ready && user)
-  //     (async function () {
-  //       const { data, error } = await supabase
-  //         .from("transactions")
-  //         .select()
-
-  //       if (!data?.length) {
-  //         const { data, error } = await supabase
-  //           .from("transactions")
-  //           .insert([{ uid: user.id }])
-  //           .select();
-  //       }
-  //     })();
-  // }, [ready]);
-  return <div>Trading</div>;
+  useEffect(() => {
+    if (ready && user) {
+      addUser(user);
+    }
+  }, [ready]);
+  return (
+    <section id="trading-view" className="min-h-screen bg-gray-900 flex flex-col p-4">
+      <div className="text-2xl text-white text-center font-bold">Trading</div>
+      <div className="flex flex-row  gap-4 flex-auto">
+        <div className="flex-auto border-2 border-amber-300 rounded-2xl "></div>
+        <div className="w-[50%] border-2 border-amber-300 rounded-2xl"></div>
+        <div className="flex-auto border-2 border-amber-300 rounded-2xl"></div>
+      </div>
+    </section>
+  );
 };
 
 export default Trading;
