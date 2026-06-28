@@ -4,7 +4,7 @@ import HeaderButton from "./HeaderButton";
 const HeaderComponent = () => {
   return (
     <div className="flex flex-row justify-between w-full pt-4 px-4 h-fit">
-      <Image src="/next.svg" alt="Logo" width={200} height={200} />
+      <Image src="/dark.png" alt="Logo" width={50} height={50} />
       <HeaderButton />
     </div>
   );
